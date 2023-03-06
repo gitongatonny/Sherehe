@@ -1,0 +1,150 @@
+/* Global styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    padding: 80px 0;
+    background: white;
+    }
+    
+    a {
+    color: white;
+    text-decoration: none;
+    }
+    
+    /* Admin dashboard styles */
+    
+    .admin-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 50px;
+    height: 50px;
+    position: relative;
+    z-index: 1;
+    }
+    
+    .admin-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    min-height: calc(100vh - 260px);
+    margin-bottom: 50px;
+    position: relative;
+    z-index: 1;
+    }
+    
+    .admin-button {
+    display: block;
+    width: 300px;
+    height: 80px;
+    background-color: #333;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 80px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    position: relative;
+    z-index: 1;
+    }
+    
+    .admin-button:hover {
+    background-color: orange;
+    color: black;
+    }
+    
+    /* Header styles */
+    header {
+    background-color: #333;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    }
+    
+    nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 10px;
+    }
+    
+    nav ul {
+    display: flex;
+    list-style: none;
+    }
+    
+    nav li {
+    margin-right: 60px;
+    }
+    
+    nav a {
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+    background-color: #333;
+    padding: 10px;
+    }
+    
+    nav a:hover {
+    color: black;
+    background-color: orange;
+    }
+    
+    .logo {
+    margin-right: 20px;
+    }
+    
+    nav img {
+    width: 70px;
+    height: 50px;
+    }
+    
+    /* Footer styles */
+    
+    footer {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 0;
+    }
+    
+    .info {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    }
+    
+    .info li {
+    margin-right: 10px;
+    }
+    
+    .info a {
+    color: #fff;
+    transition: color 0.3s ease-in-out;
+    }
+    
+    .info a:hover {
+    color: #ff5e3a;
+    }
+    
+    /* Footer fix */
+    body {
+    margin-bottom: 50px;
+    }
