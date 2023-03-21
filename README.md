@@ -1,4 +1,4 @@
-# Sherehe_WebProject
+# Sherehe - Event Planning Website.
 
 This is a group university web project that we were doing as a group of 3 for our internal attachment software project in our 3rd semester in 2nd year Computer Science at Dedan Kimathi University of Technology.
 
