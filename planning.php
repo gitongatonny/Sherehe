@@ -3,8 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Sherehe - Event Planning</title>
+    <title>Event Planning</title>
     <link rel="stylesheet" href="planning.css">
+    <link rel="icon" href="images/logo.png" type="image/x-icon">
     <script src="planning.js"></script>
     <script src="get_events.js"></script>
 
