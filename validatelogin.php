@@ -1,4 +1,4 @@
-html>
+<html>
     <head>
 
         <meta charset="UTF-8">
@@ -32,7 +32,7 @@ if(isset($_POST['username']) && isset($_POST['password'])){
     $password = mysqli_real_escape_string($conn, $_POST['password']);
 
     // Create a SQL query that selects all rows from the "customers" table where the username and password match the values submitted through the form
-    $sql = "SELECT * FROM customers WHERE username='$username' AND password='$password'";
+    $sql = "SELECT * FROM customers WHERE Username='$username' AND Password='$password'";
 
     // Execute the SQL query and store the result in a variable
     $result = mysqli_query($conn, $sql);

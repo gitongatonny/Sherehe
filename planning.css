@@ -1,5 +1,10 @@
+/* Global styles */
+
 body {
+    margin: 0;
     font-family: Arial, sans-serif;
+    font-size: 16px;
+    padding: 0;
 }
 
 a {
@@ -59,28 +64,17 @@ nav img {
     height: 50px;
 }
 
-body h1 {
-    text-align: center;
-}
-
-table {
-    border-collapse: collapse;
-    width: 100%;
-    max-height: fit-content;
-}
-
 
 /* Main styles */
 
 main {
+    background-image: url("images/event.jpg");
     background-size: cover;
     background-position: center;
-    height: 700px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    text-align: center;
     margin: 0;
 }
 
@@ -97,57 +91,65 @@ p {
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
 }
 
-th,
-td {
-    text-align: left;
-    padding: 8px;
-    border-bottom: 1px solid #ddd;
+
+/* Venue cards styles */
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 50px;
 }
 
-th {
-    background-color: #f2f2f2;
+.card {
+    background-color: white;
+    width: 300px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
 }
 
-tr:nth-child(even) {
-    background-color: #f2f2f2;
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.5);
 }
 
-tr:hover {
-    background-color: #ddd;
-    cursor: pointer;
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
 }
 
-.booked {
-    color: red;
+.card h2 {
+    font-size: 24px;
     font-weight: bold;
+    margin: 10px;
 }
 
-button {
-    padding: 8px;
-    background-color: #4CAF50;
+.card p {
+    font-size: 18px;
+    margin: 10px;
+}
+
+.card button {
+    background-color: orange;
     color: white;
+    padding: 10px 20px;
     border: none;
+    border-radius: 5px;
+    margin: 20px;
+    font-size: 18px;
     cursor: pointer;
+    transition: all 0.3s ease-in-out;
 }
 
-button:disabled {
-    background-color: gray;
-    cursor: not-allowed;
-}
-
-.invitation-card {
-    border: 1px solid #ddd;
-    padding: 16px;
-    margin-top: 16px;
-    max-width: 400px;
-}
-
-.invitation-card h2 {
-    margin-top: 0;
-}
-
-.invitation-card p {
-    margin-bottom: 0;
+.card button:hover {
+    background-color: black;
+    color: white;
+    transform: scale(1.1);
 }
 
 

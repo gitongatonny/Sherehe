@@ -28,7 +28,7 @@
 
     <main>
         <h1>Welcome to Sherehe</h1>
-        <p>Find the perfect event location suited for you.</p>
+        <p>Find the perfect event suited for you.</p>
     </main>
 
     <footer>

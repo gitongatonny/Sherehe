@@ -55,7 +55,7 @@
                 // Output each row of feedback as a table row
                 if (mysqli_num_rows($result) > 0) {
                     while ($row = mysqli_fetch_assoc($result)) {
-                        echo "<tr><td>" . $row["Feedback ID"] . "</td><td>" . $row["date"] . "</td><td>" . $row["name"] . "</td><td>" . $row["email"] . "</td><td>" . $row["message"] . "</td></tr>";
+                        echo "<tr><td>" . $row["Feedback_ID"] . "</td><td>" . $row["date"] . "</td><td>" . $row["name"] . "</td><td>" . $row["email"] . "</td><td>" . $row["message"] . "</td></tr>";
                     }
                 } else {
                     echo "0 results";

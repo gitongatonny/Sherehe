@@ -13,20 +13,20 @@
   }
 
   // Get form data
-  $name = $_POST['name'];
+  $name = $_POST['firstName'];
   $username = $_POST['username'];
   $password = $_POST['password'];
   $email = $_POST['email'];
-  $phone = $_POST['phone'];
+  //$phone = $_POST['phone'];>
 
   // Prepare and bind statement
-  $stmt = $conn->prepare("INSERT INTO customers (customer_name, username, password, customer_email, customer_phone) VALUES (?, ?, ?, ?, ?)");
-  $stmt->bind_param("sssss", $name, $username, $password, $email, $phone);
+  $stmt = $conn->prepare("INSERT INTO customers(Name, Username, Password, Email) VALUES (?, ?, ?, ?, ?)");
+  $stmt->bind_param("sssss", $name, $username, $password, $email);
 
   // Execute statement
   if ($stmt->execute()) {
     echo "Your personal account has been successfully created";
-    header("Location: planning.php");
+    header("Location: landingpage1.php");
     exit();
   } else {
     echo "Error: " . $stmt->error;

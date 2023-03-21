@@ -1,66 +1,58 @@
-// Get the table body element
-const tableBody = document.querySelector('table tbody');
+// Fetch events data from get_events.php
+fetch("get_events.php")
+    .then((response) => response.json())
+    .then((data) => {
+        // Loop through the data and create HTML for each event
+        let html = "";
+        data.forEach((event) => {
+            html += `
+                <div class="card">
+                    <img src="${event.image}" alt="${event.title}">
+                    <h2>${event.title}</h2>
+                    <p>Capacity: ${event.capacity} guests</p>
+                    <p>Price: KSHS ${event.price}</p>
+                    <button onclick="bookVenue(${event.id})">Book</button>
+                </div>
+            `;
+        });
 
-// Add a click event listener to the table body
-tableBody.addEventListener('click', event => {
-    const button = event.target;
+        // Set the HTML for the card container
+        const cardContainer = document.querySelector(".card-container");
+        cardContainer.innerHTML = html;
+    })
+    .catch((error) => console.error(error));
 
-    // Check if the clicked element is a "Book" button
-    if (button.tagName === 'BUTTON') {
-        const row = button.closest('tr');
-        const venueName = row.cells[0].textContent;
-        const capacity = row.cells[1].textContent;
-
-        // Disable the "Book" button and update the status
-        button.disabled = true;
-        row.cells[2].textContent = 'Booked';
-
-        // Show a confirmation message
-        alert(`You have booked ${venueName} with a capacity of ${capacity}.`);
-
-        // Generate the invitation card
-        generateInvitationCard(venueName, capacity);
-    }
-});
-
-// Function to generate the invitation card
-function generateInvitationCard(venueName, capacity) {
-    const eventName = prompt('Enter the name of your event:');
-    const eventDate = prompt('Enter the date of your event (YYYY-MM-DD):');
-
-    // Build the invitation card HTML
-    const invitationCard = `
-    <div class="invitation-card">
-      <h2>${eventName}</h2>
-      <p>You are invited to an event at ${venueName} with a capacity of ${capacity} on ${eventDate}.</p>
-    </div>
-  `;
-
-    // Add the invitation card to the page
-    document.body.insertAdjacentHTML('beforeend', invitationCard);
+// Function to handle booking a venue
+function bookVenue(venueId) {
+    // Send an AJAX request to the server to retrieve the venue information
+    const xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            const venue = JSON.parse(this.responseText);
+            const { venueName, capacity, price } = venue;
+            // Redirect to the check-out page with the venue information as parameters
+            window.location.href = `check-out.php?id=${venueId}&name=${venueName}&capacity=${capacity}&price=${price}`;
+        }
+    };
+    xhttp.open("GET", `get-venue.php?id=${venueId}`, true);
+    xhttp.send();
 }
 
-// Add search functionality
-const searchInput = document.querySelector('#search');
-
-searchInput.addEventListener('input', event => {
-    const searchQuery = event.target.value.trim().toLowerCase();
-
-    // Call the search function with the search query
-    searchVenues(searchQuery);
-});
-
-function searchVenues(searchQuery) {
-    const rows = document.querySelectorAll('table tbody tr');
-
-    rows.forEach(row => {
-        const venueName = row.cells[0].textContent.toLowerCase();
-        const capacity = row.cells[1].textContent.toLowerCase();
-
-        if (venueName.includes(searchQuery) || capacity.includes(searchQuery)) {
-            row.style.display = '';
-        } else {
-            row.style.display = 'none';
-        }
+// Function to handle hover effect on cards
+function cardHoverEffect() {
+    const cards = document.querySelectorAll(".card");
+    cards.forEach((card) => {
+        card.addEventListener("mouseover", () => {
+            card.style.boxShadow = "2px 2px 10px rgba(0, 0, 0, 0.3)";
+            card.style.transform = "translateY(-10px)";
+            card.style.transition = "all 0.3s ease-in-out";
+        });
+        card.addEventListener("mouseout", () => {
+            card.style.boxShadow = "none";
+            card.style.transform = "none";
+        });
     });
 }
+
+// Call the cardHoverEffect function on window load
+window.addEventListener("load", cardHoverEffect);
