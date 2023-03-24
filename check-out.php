@@ -3,8 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Check Out</title>
+    <title>Booking & Check Out</title>
     <link rel="stylesheet" href="check-out.css">
+    <link rel="icon" href="images/logo.png" type="image/x-icon">
 </head>
 
 <body>
