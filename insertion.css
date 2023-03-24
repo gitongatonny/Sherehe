@@ -1,65 +1,57 @@
-/* Global styles */
-
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    padding: 80px 0;
-    background: white;
-  }
-  
-  a {
-    color: white;
-    text-decoration: none;
-  }
-  
-  main {
-    height: 1000px;
-  }
-  
-  /* Admin dashboard styles */
-  
-  .admin-title {
-    text-align: center;
-    font-size: 36px;
-    font-weight: bold;
-    margin-top: 50px;
-    height: 50px;
-    position: relative;
-    z-index: 1;
-  }
-  
-  .admin-buttons {
+.admin-form {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    margin-top: 50px;
-    min-height: calc(100vh - 260px);
-    margin-bottom: 50px;
-    position: relative;
-    z-index: 1;
-  }
-  
-  .admin-button {
-    display: block;
-    width: 300px;
-    height: 40px;
-    background-color: #333;
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
-    text-align: center;
-    line-height: 40px;
-    margin-bottom: 20px;
+    flex-direction: column;
+    background-color: #ccc;
+    padding: 20px;
+    margin: 120px auto;
     border-radius: 10px;
-    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-    position: relative;
-    z-index: 1;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
   }
   
-  .admin-button:hover {
+  .admin-form h2 {
+    margin-bottom: 20px;
+    font-size: 30px;
+    text-align: center;
+  }
+  
+  .admin-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #444;
+  }
+  
+  .admin-form input[type="text"],
+  .admin-form input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+  }
+  
+  .admin-form input[type="submit"] {
     background-color: orange;
-    color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-items: center;
+    margin: 20px auto 0;
+    display: block;
+  }
+  
+  .admin-form input[type="submit"]:hover {
+    background-color: black;
   }
   
   /* Header styles */
@@ -112,6 +104,7 @@ body {
     width: 70px;
     height: 50px;
   }
+
   
   /* Footer styles */
   
@@ -150,9 +143,5 @@ body {
     color: #ff5e3a;
   }
   
-  /* Footer fix */
-  
-  body {
-    margin-bottom: 50px;
-  }
+
   

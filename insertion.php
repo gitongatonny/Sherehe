@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="admin_dash.css">
+    <link rel="stylesheet" href="insertion.css">
     <link rel="icon" href="images/logo.png" type="image/x-icon">
 </head>
+
 <body>
     <header>
         <nav>
@@ -19,7 +21,7 @@
             </ul>
         </nav>
     </header>
-  
+
     <div class="admin-form">
         <h2>Create Event</h2>
         <form method="post" target="_blank" action="create_event.php">
@@ -41,4 +43,5 @@
         </ul>
     </footer>
 </body>
+
 </html>
