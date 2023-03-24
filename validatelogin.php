@@ -1,18 +1,20 @@
 <html>
-    <head>
 
-        <meta charset="UTF-8">
-        <title>You have successfully logged in</title>
-        <link rel="icon" href="images/logo.png" type="image/x-icon">
+<head>
 
-    </head>
+    <meta charset="UTF-8">
+    <title>You have successfully logged in</title>
+    <link rel="icon" href="images/logo.png" type="image/x-icon">
+
+</head>
+
 </html>
 <?php
 // Start session
 session_start();
 
 // Check if form has been submitted with both fields filled out
-if(isset($_POST['username']) && isset($_POST['password'])){
+if (isset($_POST['username']) && isset($_POST['password'])) {
     // Set database credentials
     $db_host = "localhost";
     $db_user = "root";
@@ -23,7 +25,7 @@ if(isset($_POST['username']) && isset($_POST['password'])){
     $conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
 
     // Check if connection was successful
-    if(!$conn){
+    if (!$conn) {
         die("Connection failed: " . mysqli_connect_error());
     }
 
@@ -38,7 +40,7 @@ if(isset($_POST['username']) && isset($_POST['password'])){
     $result = mysqli_query($conn, $sql);
 
     // Check if the query returned any rows
-    if(mysqli_num_rows($result) > 0){
+    if (mysqli_num_rows($result) > 0) {
         // If the username and password match an existing user in the database, set session variables accordingly
         $_SESSION['loggedin'] = true;
         $_SESSION['username'] = $username;
@@ -46,7 +48,7 @@ if(isset($_POST['username']) && isset($_POST['password'])){
         // Check if the submitted username and password are 'admin' and 'admin123', respectively
         if ($username === 'admin' && $password === 'admin123') {
             // If so, redirect the user to the admin dashboard page
-            header("Location: admin_dash.php");
+            header("Location: admin/admin_dash.php");
             exit(); // Exit the script to prevent further execution
         } else {
             // If not, redirect the user to the event listings page

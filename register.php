@@ -26,7 +26,7 @@
   // Execute statement
   if ($stmt->execute()) {
     echo "Your personal account has been successfully created";
-    header("Location: landingpage1.php");
+    header("Location: planning.php");
     exit();
   } else {
     echo "Error: " . $stmt->error;
@@ -35,4 +35,3 @@
   // Close statement and connection
   $stmt->close();
   $conn->close();
-?>
