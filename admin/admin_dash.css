@@ -1,9 +1,11 @@
 /* Global styles */
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     font-size: 16px;
-    padding: 0;
+    padding: 80px 0;
+    background: white;
   }
   
   a {
@@ -11,7 +13,59 @@ body {
     text-decoration: none;
   }
   
+  main {
+    height: 1000px;
+  }
+  
+  /* Admin dashboard styles */
+  
+  .admin-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 50px;
+    height: 50px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .admin-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    min-height: calc(100vh - 260px);
+    margin-bottom: 50px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .admin-button {
+    width: 300px;
+    height: 60px;
+    background-color: #333;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 40px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .admin-button:hover {
+    background-color: orange;
+    color: black;
+  }
+  
   /* Header styles */
+  
   header {
     background-color: #333;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
@@ -34,6 +88,8 @@ body {
   nav ul {
     display: flex;
     list-style: none;
+    margin: 0;
+    padding: 0;
   }
   
   nav li {
@@ -45,6 +101,7 @@ body {
     transition: color 0.3s ease-in-out;
     background-color: #333;
     padding: 10px;
+    display: block;
   }
   
   nav a:hover {
@@ -61,12 +118,8 @@ body {
     height: 50px;
   }
   
-  /* Main styles */
-  main {
-    padding-top: 80px;
-  }
-  
   /* Footer styles */
+  
   footer {
     background-color: #333;
     color: #fff;
@@ -74,10 +127,12 @@ body {
     justify-content: center;
     align-items: center;
     height: 50px;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
+    width: 100%;
+    z-index: 0;
   }
   
   .info {
@@ -85,7 +140,6 @@ body {
     list-style: none;
     margin: 0;
     padding: 0;
-    text-align: center;
   }
   
   .info li {
@@ -100,4 +154,7 @@ body {
   .info a:hover {
     color: #ff5e3a;
   }
+  
+
+  
   

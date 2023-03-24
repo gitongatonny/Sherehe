@@ -98,6 +98,10 @@ caption {
     margin: 20px 0;
     color: black;
 }
+tbody tr:hover {
+    background-color: #333;
+    color: #fff;
+  }
 
 /* Footer styles */
 footer {

@@ -23,7 +23,7 @@ if (isset($_POST['add_event']) && isset($_POST['venue']) && isset($_POST['capaci
     // execute statement
     if ($stmt->execute()) {
         // redirect back to admin dashboard
-        header("Location: admin_dash.php");
+        header("Location: view_events.php");
         exit();
     } else {
         // display error message
@@ -36,4 +36,3 @@ if (isset($_POST['add_event']) && isset($_POST['venue']) && isset($_POST['capaci
 
 // close database connection
 $mysqli->close();
-?>
