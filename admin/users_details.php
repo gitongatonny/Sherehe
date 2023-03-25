@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Users' Feedback | Admin Dash</title>
+    <title>Users' Details | Admin Dash</title>
     <link rel="stylesheet" href="view_feedback.css">
     <link rel="icon" href="../images/logo.png" type="image/x-icon">
 </head>

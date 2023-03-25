@@ -13,7 +13,6 @@
         <nav>
             <a href="index.php"><img src="images/logo.png" alt="Sherehe logo"></a>
             <ul>
-                <li><a href="index.php">Homepage</a></li>
                 <li><a href="admin_dash.php">Dash</a></li>
                 <li><a href="users_details.php">Users' List</a></li>
                 <li><a href="view_events.php">View Events</a></li>

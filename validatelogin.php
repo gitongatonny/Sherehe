@@ -56,8 +56,9 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
             exit(); // Exit the script to prevent further execution
         }
     } else {
-        // If no match is found, output an error message informing the user that the submitted username or password is invalid
-        echo "Invalid username or password.";
+        // If no match is found, show an error message informing the user that the submitted username or password is invalid
+        echo '<script>alert("Incorrect credentials, try again!");</script>';
+        header("refresh:0;url=" . $_SERVER['HTTP_REFERER']);
     }
 
     // Close the database connection

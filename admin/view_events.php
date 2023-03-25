@@ -116,7 +116,7 @@
     ?>
 
 
-    <!--Add JavaScript code for handling delete and edit actions-->
+    <!--JS code for handling delete and edit actions-->
     <script>
         function deleteRecord(id) {
             if (confirm('Are you sure you want to delete this record?')) {

@@ -1,0 +1,130 @@
+/* Header styles */
+
+header {
+    background-color: #333;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    margin-right: 60px;
+}
+
+nav a {
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+    background-color: #333;
+    padding: 10px;
+    text-decoration: none;
+    color: #fff;
+}
+
+nav a:hover {
+    color: black;
+    background-color: orange;
+}
+
+.logo {
+    margin-right: 20px;
+}
+
+nav img {
+    width: 70px;
+    height: 50px;
+}
+
+/* Footer styles */
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+ul.info {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul.info li {
+    margin: 0 10px;
+}
+
+ul.info li a {
+    color: white;
+    text-decoration: none;
+}
+
+.container {
+    background-color: gray;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    margin: 150px auto 0;
+    max-width: 600px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container h3 {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.container p {
+    color: white;
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.container button {
+    background-color: orange;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.container button:hover {
+    background-color: black;
+}
+
+.container script {
+    margin-top: 20px;
+}

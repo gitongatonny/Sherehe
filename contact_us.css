@@ -41,7 +41,7 @@ body{
     height:150px;
   }
   button{
-    background-color:greenyellow;
+    background-color:orange;
     cursor:pointer;
     border:none;
     padding:10px;
@@ -78,6 +78,8 @@ nav {
 nav ul {
     display: flex;
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 nav li {

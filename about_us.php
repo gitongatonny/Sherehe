@@ -16,9 +16,9 @@
         <nav>
             <a href="index.php"><img src="images/logo.png" alt="Sherehe logo"></a>
             <ul>
-                <li><a href="index.php">Home</a></li>
                 <li><a href="planning.php">Event Planning</a></li>
                 <li><a href="login.php">Login/Register</a></li>
+                <li><a href="profile.php">Profile</a></li>
                 <li><a href="contact_us.php">Contact Us</a></li>
                 <li><a href="about_us.php">About Us</a></li>
             </ul>
