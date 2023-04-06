@@ -13,15 +13,16 @@ if ($conn->connect_error) {
 }
 
 // Get form data
-$name = $_POST['firstName'];
+$name = $_POST['name'];
 $username = $_POST['username'];
 $password = $_POST['password'];
 $email = $_POST['email'];
+$phone = $_POST['phone'];
 //$phone = $_POST['phone'];>
 
 // Prepare and bind statement
-$stmt = $conn->prepare("INSERT INTO customers(Name, Username, Password, Email) VALUES (?, ?, ?, ?, ?)");
-$stmt->bind_param("sssss", $name, $username, $password, $email);
+$stmt = $conn->prepare("INSERT INTO customers(customer_name, customer_email, username, password,  customer_phone) VALUES (?, ?, ?, ?, ?)");
+$stmt->bind_param("sssss", $name, $email, $username, $password, $phone );
 
 // Execute statement
 if ($stmt->execute()) {

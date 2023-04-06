@@ -57,7 +57,7 @@ main{
     flex-direction: column;
     align-items: center;
     margin-top: 50px;
-    background-image: url("https://source.unsplash.com/random/2272x1704");
+    background-image: url("images/venues.jpeg");
     background-size: cover;
     background-position: center;
     justify-content: center;

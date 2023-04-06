@@ -23,8 +23,11 @@ if ($result->num_rows > 0) {
         $event = array(
             'id' => $row['id'],
             'venue' => $row['venue'],
+            'rating' => $row['rating'],
             'capacity' => $row['capacity'],
-            'price' => $row['price']
+            'amenities' => $row['amenities'],
+            'price' => $row['price'],
+            'image' => $row['image'] // Add image URL to the event object
         );
         array_push($events, $event);
     }
@@ -36,5 +39,3 @@ echo json_encode($events);
 
 // Close database connection
 $conn->close();
-
-?>

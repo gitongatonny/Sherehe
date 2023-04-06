@@ -23,7 +23,8 @@ $email = $row['customer_email'];
 $phone = $row['customer_phone'];
 
 // Retrieve booking history from checkout table
-$sql = "SELECT date, period, price, Timestamp FROM checkout WHERE email = '$email'";
+$sql = "SELECT c.date, c.period, c.price, c.Timestamp, v.venue FROM checkout c JOIN venues v ON c.id = v.id WHERE c.email = '$email'";
+
 $result = $db->query($sql);
 $booking_history = array();
 while ($row = $result->fetch_assoc()) {
@@ -47,7 +48,7 @@ while ($row = $result->fetch_assoc()) {
     <nav>
       <a href="index.php"><img src="images/logo.png" alt="Sherehe logo"></a>
       <ul>
-        <li><a href="planning.php">Event Planning</a></li>
+        <li><a href="planning.php">Event Venues</a></li>
         <li><a href="login.php">Login/Register</a></li>
         <li><a href="profile.php">Profile</a></li>
         <li><a href="contact_us.php">Contact Us</a></li>
@@ -77,19 +78,23 @@ while ($row = $result->fetch_assoc()) {
             <th>Date</th>
             <th>No. of Days</th>
             <th>Price</th>
+            <th>Venue</th>
             <th>Date &amp; Time of Order</th>
           </tr>
         </thead>
+
         <tbody>
           <?php foreach ($booking_history as $booking) : ?>
             <tr>
               <td><?php echo $booking['date']; ?></td>
               <td><?php echo $booking['period']; ?></td>
               <td><?php echo $booking['price']; ?></td>
+              <td><?php echo $booking['venue']; ?></td>
               <td><?php echo $booking['Timestamp']; ?></td>
             </tr>
           <?php endforeach; ?>
         </tbody>
+
       </table>
       <form action="logout.php">
         <button type="submit">Logout</button>

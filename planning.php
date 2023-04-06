@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="planning.css">
     <script src="planning.js"></script>
     <script src="get_events.js"></script>
-
+    <link rel="icon" href="images/logo.png" type="image/x-icon">
 </head>
 
 <body>
@@ -16,7 +16,7 @@
         <nav>
             <a href="index.php"><img src="images/logo.png" alt="Sherehe logo"></a>
             <ul>
-                <li><a href="planning.php">Event Planning</a></li>
+                <li><a href="planning.php">Event Venues</a></li>
                 <li><a href="login.php">Login/Register</a></li>
                 <li><a href="profile.php">Profile</a></li>
                 <li><a href="contact_us.php">Contact Us</a></li>
@@ -30,6 +30,12 @@
         <div class="card-container">
 
         </div>
+
+        <form method="GET" action="check-out.php">
+            <input type="hidden" name="venue" value="<?php echo $venue_name; ?>">
+            <!-- other form fields -->
+        </form>
+
     </main>
     <footer>
         <ul class="info">

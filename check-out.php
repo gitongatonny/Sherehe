@@ -13,7 +13,7 @@
         <nav>
             <a href="index.php"><img src="images/logo.png" alt="Sherehe logo"></a>
             <ul>
-                <li><a href="planning.php">Event Planning</a></li>
+                <li><a href="planning.php">Event Venues</a></li>
                 <li><a href="login.php">Login/Register</a></li>
                 <li><a href="profile.php">Profile</a></li>
                 <li><a href="contact_us.php">Contact Us</a></li>
@@ -83,14 +83,16 @@
 
                 // Create table if it does not exist
                 $sql = "CREATE TABLE IF NOT EXISTS checkout (
-            id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-            name VARCHAR(30) NOT NULL,
-            phone VARCHAR(15) NOT NULL,
-            email VARCHAR(50) NOT NULL,
-            date DATE NOT NULL,
-            period INT(2) NOT NULL,
-            price FLOAT NOT NULL
-        )";
+                    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+                    name VARCHAR(30) NOT NULL,
+                    phone VARCHAR(15) NOT NULL,
+                    email VARCHAR(50) NOT NULL,
+                    date DATE NOT NULL,
+                    period INT(2) NOT NULL,
+                    price FLOAT NOT NULL,
+                    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+                )";
+        
 
                 if ($conn->query($sql) === FALSE) {
                     echo "Error creating table: " . $conn->error;

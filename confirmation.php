@@ -11,13 +11,13 @@
 <body>
     <header>
         <nav>
-            <a href="../index.php"><img src="../images/logo.png" alt="Sherehe logo"></a>
+            <a href="index.php"><img src="images/logo.png" alt="Sherehe logo"></a>
             <ul>
-                <li><a href="admin_dash.php">Dash</a></li>
-                <li><a href="insertion.php">Create Events</a></li>
-                <li><a href="view_events.php">Edit Events</a></li>
-                <li><a href="users_details.php">Users' List</a></li>
-                <li><a href="view_feedback.php">Users' Feedback</a></li>
+                <li><a href="planning.php">Event Venues</a></li>
+                <li><a href="login.php">Login/Register</a></li>
+                <li><a href="profile.php">Profile</a></li>
+                <li><a href="contact_us.php">Contact Us</a></li>
+                <li><a href="about_us.php">About Us</a></li>
             </ul>
         </nav>
     </header>
@@ -28,6 +28,8 @@
 
         <!-- Generate invitation card here -->
         <button id="download-button" onclick="generateInvitationCard()">Download Invitation Card</button>
+        <br>
+        <button id="download-button"><a href="profile.php">Go To Your Profile</a></button>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
         <script>

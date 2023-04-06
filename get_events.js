@@ -7,9 +7,12 @@ fetch("get_events.php")
         data.forEach(event => {
             html += `
                 <div class="card">
+                    <img src="${event.image}" alt="${event.venue}">
                     <h2>${event.venue}</h2>
+                    <p>Rating: ${event.rating}</p>
                     <p>Capacity: ${event.capacity} guests</p>
                     <p>Price: KSHS ${event.price}</p>
+                    <p>Amenities: ${event.amenities}</p>
                     <button onclick="bookVenue(${event.id})">Book</button>
                 </div>
             `;

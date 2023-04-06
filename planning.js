@@ -7,9 +7,11 @@ fetch("get_events.php")
         data.forEach((event) => {
             html += `
                 <div class="card">
-                    <img src="${event.image}" alt="${event.title}">
-                    <h2>${event.title}</h2>
+                    <img src="${event.image}" alt="${event.venue}">
+                    <h2>${event.venue}</h2>
+                    <p>Rating: ${event.rating}</p>
                     <p>Capacity: ${event.capacity} guests</p>
+                    <p>Amenities: ${amenities}</p>
                     <p>Price: KSHS ${event.price}</p>
                     <button onclick="bookVenue(${event.id})">Book</button>
                 </div>
@@ -21,6 +23,7 @@ fetch("get_events.php")
         cardContainer.innerHTML = html;
     })
     .catch((error) => console.error(error));
+
 
 // Function to handle booking a venue
 function bookVenue(venueId) {

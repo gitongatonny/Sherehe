@@ -70,7 +70,7 @@ nav img {
 /* Main styles */
 
 main {
-    background-image: url("images/event.jpg");
+    background-image: url("images/sunset.jpg");
     background-size: cover;
     background-position: center;
     display: flex;
@@ -78,9 +78,6 @@ main {
     justify-content: center;
     align-items: center;
     margin: 0;
-    background-image: url("https://source.unsplash.com/random/2272x1704");
-    background-size: cover;
-    background-position: center;
 }
 
 h1 {
@@ -126,6 +123,9 @@ p {
     height: 200px;
     object-fit: cover;
     border-radius: 10px 10px 0 0;
+    display: block;
+    margin: 0 auto;
+    max-height: 200px;
 }
 
 .card h2 {
@@ -149,12 +149,70 @@ p {
     font-size: 18px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
+    text-align: center;
+    align-items: center;
 }
 
 .card button:hover {
     background-color: black;
     color: white;
     transform: scale(1.1);
+}
+
+@media only screen and (max-width: 960px) {
+    /* Header styles */
+    nav li {
+        margin-right: 30px;
+    }
+    nav a {
+        padding: 5px;
+    }
+    nav img {
+        width: 50px;
+        height: 35px;
+    }
+    /* Venue cards styles */
+    .card-container {
+        margin-top: 170px;
+    }
+    .card {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    /* Header styles */
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+    }
+    nav li {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    nav a {
+        padding: 5px;
+    }
+    .logo {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    nav img {
+        width: 50px;
+        height: 35px;
+    }
+    /* Main styles */
+    h1 {
+        font-size: 36px;
+    }
+    p {
+        font-size: 18px;
+    }
+    /* Venue cards styles */
+    .card {
+        margin: 10px 0;
+    }
 }
 
 

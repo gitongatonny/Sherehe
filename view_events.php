@@ -60,11 +60,9 @@
         $newVenue = $_POST['newVenue'];
         $newCapacity = $_POST['newCapacity'];
         $newPrice = $_POST['newPrice'];
-        $newImage = $_POST['newImage'];
-
 
         // Construct SQL query to update record in database
-        $sql = "UPDATE venues SET venue='$newVenue', capacity=$newCapacity, price=$newPrice, image='$newImage' WHERE id=$id";
+        $sql = "UPDATE venues SET venue='$newVenue', capacity=$newCapacity, price=$newPrice WHERE id=$id";
 
         // Execute the SQL query and check if it was successful
         if (mysqli_query($conn, $sql)) {
@@ -98,10 +96,17 @@
             echo '<tr>';
             echo '<td>' . $row['id'] . '</td>';
             echo '<td>' . $row['venue'] . '</td>';
-            echo '<td>' . $row['capacity'] . '</td>';
-            echo '<td>' . $row['price'] . '</td>';
-            echo '<td><button onclick="editRecord(' . $row['id'] . ',\'' . $row['venue'] . '\',' . $row['capacity'] . ',' . $row['price'] . ',\'' . $row['image'] . '\')">Edit</button></td>';
-            echo '<td><button onclick="deleteRecord(' . $row['id'] . ')">Delete</button></td>';
+            echo '<td>' .
+                $row['capacity'] .
+                '</td>';
+            echo '<td>' .
+                $row['price'] .
+                '</td>';
+
+            // Add edit button with popup form for editing values and AJAX request for updating record in database 
+            echo "<td><button onclick=\"editRecord(" . $row['id'] . ", '" . $row['venue'] . "', " . $row['capacity'] . ", " . $row['price'] . ")\">Edit</button></td>";
+            // Add delete button with AJAX request for deleting record from database 
+            echo "<td><button onclick=\"deleteRecord(" . $row['id'] . ")\">Delete</button></td>";
             echo '</tr>';
         }
         echo '</table>';
@@ -126,25 +131,25 @@
             }
         }
 
-        function editRecord(id, venue, capacity, price, image) {
+        function editRecord(id, venue, capacity, price) {
             var newVenue =
                 prompt('Enter new venue:', venue);
             var newCapacity =
                 prompt('Enter new capacity:', capacity);
             var newPrice =
                 prompt('Enter new price:', price);
-            var newImage =
-                prompt('Enter new image link:', image);
-            if (newVenue != null && newCapacity != null && newPrice != null && newImage != null) {
+            if (newVenue != null && newCapacity != null && newPrice != null) {
                 var xhr =
                     new XMLHttpRequest();
                 xhr.open('POST', '', true);
-                xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-                xhr.onload = function() {
-                    alert('Event update is successful!');
-                    location.reload();
-                };
-                xhr.send('action=update&id=' + id + '&newVenue=' + newVenue + '&newCapacity=' + newCapacity + '&newPrice=' + newPrice + '&newImage=' + newImage);
+                xhr.setRequestHeader('Content-type',
+                    'application/x-www-form-urlencoded');
+                xhr.onload =
+                    function() {
+                        alert('Event has been updated successfully!');
+                        location.reload();
+                    };
+                xhr.send(`action=update&id=${id}&newVenue=${encodeURIComponent(newVenue)}&newCapacity=${encodeURIComponent(newCapacity)}&newPrice=${encodeURIComponent(newPrice)}`);
             }
         }
     </script>
