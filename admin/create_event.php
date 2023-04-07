@@ -8,22 +8,27 @@ if ($mysqli->connect_error) {
 }
 
 // check if form submitted and form values are set
-if (isset($_POST['add_event']) && isset($_POST['venue']) && isset($_POST['capacity']) && isset($_POST['price']) && isset($_POST['image'])) {
+if (isset($_POST['add_event']) && isset($_POST['venue']) && isset($_POST['rating']) && isset($_POST['capacity']) && isset($_POST['amenities']) && isset($_POST['price']) && isset($_POST['image'])) {
     // get form values
     $venue = $_POST['venue'];
+    $rating = $_POST['rating'];
     $capacity = $_POST['capacity'];
+    $amenities = nl2br(htmlspecialchars($_POST['amenities'], ENT_QUOTES));
     $price = $_POST['price'];
     $image = $_POST['image'];
 
+
+
     // prepare SQL statement
-    $stmt = $mysqli->prepare("INSERT INTO venues (venue, capacity, price, image) VALUES (?, ?, ?, ?)");
+    $stmt = $mysqli->prepare("INSERT INTO venues (venue, rating, capacity, amenities, price, image) VALUES (?, ?, ?, ?, ?, ?)");
 
     // bind parameters
-    $stmt->bind_param("siis", $venue, $capacity, $price, $image);
+    $stmt->bind_param("sdisss", $venue, $rating, $capacity, $amenities, $price, $image);
 
     // execute statement
     if ($stmt->execute()) {
         // redirect back to admin dashboard
+        echo '<script>alert("Venue Successfully Added!");</script>';
         header("Location: view_events.php");
         exit();
     } else {

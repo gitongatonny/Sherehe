@@ -21,26 +21,33 @@
             </ul>
         </nav>
     </header>
- 
-    <div class="admin-form">
-    <h2>Create Event</h2>
-    <form method="post" action="create_event.php">
-    <label for="venue">Venue:</label>
-    <input type="text" name="venue" id="venue" required>
-    <br>
-    <label for="capacity">Capacity:</label>
-    <input type="number" name="capacity" id="capacity" required>
-    <br>
-    <label for="price">Price:</label>
-    <input type="number" name="price" id="price" required>
-    <br>
-    <label for="image">Image:</label>
-    <input type="text" name="image" id="image">
-    <br>
-    <input type="submit" name="add_event" value="Add Event">
-</form>
 
-</div>
+    <div class="admin-form">
+        <h2>Create Event</h2>
+        <form method="post" action="create_event.php">
+            <label for="venue">Venue:</label>
+            <input type="text" name="venue" id="venue" required>
+            <br>
+            <label for="rating">Rating:</label>
+            <input type="decimal" name="rating" id="rating" required>
+            <br>
+            <br>
+            <label for="capacity">Capacity:</label>
+            <input type="number" name="capacity" id="capacity" required>
+            <br>
+            <label for="price">Price:</label>
+            <input type="number" name="price" id="price" required>
+            <br>
+            <label for="amenities">Description:</label>
+            <textarea name="amenities" id="description" oninput="autoSizeTextArea()" required></textarea>
+            <br>
+            <label for="image">Image Link:</label>
+            <input type="text" name="image" id="image">
+            <br>
+            <input type="submit" name="add_event" value="Add Event">
+        </form>
+
+    </div>
 
 
     <footer>
@@ -48,6 +55,18 @@
             <li style="text-align:center;">Event Planning System <br> ©2023</a></li>
         </ul>
     </footer>
+
+    <script>
+        function autoSizeTextArea() {
+            const descriptionTextarea = document.getElementById("description");
+            descriptionTextarea.style.height = "auto";
+            descriptionTextarea.style.width = "auto";
+            const width = Math.min(descriptionTextarea.scrollWidth, 500);
+            descriptionTextarea.style.width = width + "px";
+            descriptionTextarea.style.height = (descriptionTextarea.scrollHeight) + "px";
+        }
+    </script>
+
 </body>
 
 </html>
