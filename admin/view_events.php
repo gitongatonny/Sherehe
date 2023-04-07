@@ -21,8 +21,6 @@
             </ul>
         </nav>
     </header>
-
-
     <?php
     // Start session
     session_start();
@@ -60,11 +58,13 @@
         $newVenue = $_POST['newVenue'];
         $newCapacity = $_POST['newCapacity'];
         $newPrice = $_POST['newPrice'];
+        $newRating = $_POST['newRating'];
+        $newDescription = $_POST['newDescription'];
+        $newType = $_POST['newType'];
         $newImage = $_POST['newImage'];
 
-
         // Construct SQL query to update record in database
-        $sql = "UPDATE venues SET venue='$newVenue', capacity=$newCapacity, price=$newPrice, image='$newImage' WHERE id=$id";
+        $sql = "UPDATE venues SET venue='$newVenue', capacity=$newCapacity, price=$newPrice, rating=$newRating, amenities='$newDescription', type='$newType', image='$newImage' WHERE id=$id";
 
         // Execute the SQL query and check if it was successful
         if (mysqli_query($conn, $sql)) {
@@ -76,38 +76,44 @@
         }
     }
 
-    // Construct SQL query to retrieve all events from the events table 
-    $sql =
-        "SELECT * FROM venues";
+    // Construct SQL query to retrieve all venues from the venues table 
+    $sql = "SELECT * FROM venues";
 
     // Execute the SQL query and get the result set 
-    $result =
-        mysqli_query($conn, $sql);
+    $result = mysqli_query($conn, $sql);
 
     // Close the database connection 
     mysqli_close($conn);
 
-    // Check if any events were found 
+    // Check if any venues were found 
     if (mysqli_num_rows($result) > 0) {
-        // Display the list of events
-
-        echo '<h1>Edit Events</h1>';
+        // Display the list of venues
+        echo '<h1>Edit Venues</h1>';
         echo '<table>';
-        echo '<tr><th>ID</th><th>Venue</th><th>Capacity</th><th>Price</th><th></th></tr>';
+        echo '<tr><th>ID</th><th>Venue</th><th>Capacity</th><th>Price</th><th>Rating</th><th>Description</th><th>Type</th><th>Image</th><th></th></tr>';
         while ($row = mysqli_fetch_assoc($result)) {
             echo '<tr>';
             echo '<td>' . $row['id'] . '</td>';
             echo '<td>' . $row['venue'] . '</td>';
             echo '<td>' . $row['capacity'] . '</td>';
             echo '<td>' . $row['price'] . '</td>';
-            echo '<td><button onclick="editRecord(' . $row['id'] . ',\'' . $row['venue'] . '\',' . $row['capacity'] . ',' . $row['price'] . ',\'' . $row['image'] . '\')">Edit</button></td>';
-            echo '<td><button onclick="deleteRecord(' . $row['id'] . ')">Delete</button></td>';
+            echo '<td>' . $row['rating'] . '</td>';
+            echo '<td>' . $row['amenities'] . '</td>';
+            echo '<td>' . $row['type'] . '</td>';
+            echo '<td>' . $row['image'] . '</td>';
+
+            // Add edit button with popup form for editing values and AJAX request for updating record in database 
+            echo "<td><button onclick=\"editRecord(" . $row['id'] . ", '" . $row['venue'] . "', '" . $row['capacity'] . "', '" . $row['price'] . "', '" . $row['rating'] . "', '" . $row['amenities'] . "', '" . $row['type'] . "', '" . $row['image'] . "')\">Edit</button></td>";
+
+            // Add delete button with AJAX request for deleting record from database 
+            echo "<td><button onclick=\"deleteRecord(" . $row['id'] . ")\">Delete</button></td>";
             echo '</tr>';
         }
         echo '</table>';
     } else { // If no events were found, display a message  
         echo '<h1>No events found</h1>';
     }
+
     ?>
 
 
@@ -126,25 +132,33 @@
             }
         }
 
-        function editRecord(id, venue, capacity, price, image) {
+        function editRecord(id, venue, capacity, price, rating, amenities, type, image) {
             var newVenue =
-                prompt('Enter new venue:', venue);
+                prompt('Enter new Venue:', venue);
             var newCapacity =
-                prompt('Enter new capacity:', capacity);
+                prompt('Enter new Capacity:', capacity);
             var newPrice =
-                prompt('Enter new price:', price);
+                prompt('Enter new Price:', price);
+            var newRating =
+                prompt('Enter new Rating:', rating);
+            var newAmenities =
+                prompt('Enter new Description:', amenities);
+            var newType =
+                prompt('Enter new Venue Type:', type);
             var newImage =
-                prompt('Enter new image link:', image);
-            if (newVenue != null && newCapacity != null && newPrice != null && newImage != null) {
+                prompt('Enter new Image Link:', image);
+            if (newVenue != null && newCapacity != null && newPrice != null && newRating != null && newAmenities != null && newType != null && newImage != null) {
                 var xhr =
                     new XMLHttpRequest();
                 xhr.open('POST', '', true);
-                xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-                xhr.onload = function() {
-                    alert('Event update is successful!');
-                    location.reload();
-                };
-                xhr.send('action=update&id=' + id + '&newVenue=' + newVenue + '&newCapacity=' + newCapacity + '&newPrice=' + newPrice + '&newImage=' + newImage);
+                xhr.setRequestHeader('Content-type',
+                    'application/x-www-form-urlencoded');
+                xhr.onload =
+                    function() {
+                        alert('Event has been updated successfully!');
+                        location.reload();
+                    };
+                xhr.send(`action=update&id=${id}&newVenue=${encodeURIComponent(newVenue)}&newCapacity=${encodeURIComponent(newCapacity)}&newPrice=${encodeURIComponent(newPrice)}&newRating=${encodeURIComponent(newRating)}&newAmenities=${encodeURIComponent(newAmenities)}&newType=${encodeURIComponent(newType)}&newImage=${encodeURIComponent(newImage)}`);
             }
         }
     </script>
