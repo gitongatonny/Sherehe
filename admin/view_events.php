@@ -11,7 +11,7 @@
 <body>
     <header>
         <nav>
-            <a href="../index.php"><img src="../images/logo.png" alt="Sherehe logo"></a>
+            <a href="./admin_dash.php"><img src="../images/logo.png" alt="Sherehe logo"></a>
             <ul>
                 <li><a href="admin_dash.php">Dash</a></li>
                 <li><a href="insertion.php">Create Events</a></li>
@@ -103,7 +103,8 @@
             echo '<td>' . $row['image'] . '</td>';
 
             // Add edit button with popup form for editing values and AJAX request for updating record in database 
-            echo "<td><button onclick=\"editRecord(" . $row['id'] . ", '" . $row['venue'] . "', '" . $row['capacity'] . "', '" . $row['price'] . "', '" . $row['rating'] . "', '" . $row['amenities'] . "', '" . $row['type'] . "', '" . $row['image'] . "')\">Edit</button></td>";
+            echo "<td><a href='edit_venue.php?id=" . $row['id'] . "'>Edit</a></td>";
+
 
             // Add delete button with AJAX request for deleting record from database 
             echo "<td><button onclick=\"deleteRecord(" . $row['id'] . ")\">Delete</button></td>";
@@ -132,35 +133,7 @@
             }
         }
 
-        function editRecord(id, venue, capacity, price, rating, amenities, type, image) {
-            var newVenue =
-                prompt('Enter new Venue:', venue);
-            var newCapacity =
-                prompt('Enter new Capacity:', capacity);
-            var newPrice =
-                prompt('Enter new Price:', price);
-            var newRating =
-                prompt('Enter new Rating:', rating);
-            var newAmenities =
-                prompt('Enter new Description:', amenities);
-            var newType =
-                prompt('Enter new Venue Type:', type);
-            var newImage =
-                prompt('Enter new Image Link:', image);
-            if (newVenue != null && newCapacity != null && newPrice != null && newRating != null && newAmenities != null && newType != null && newImage != null) {
-                var xhr =
-                    new XMLHttpRequest();
-                xhr.open('POST', '', true);
-                xhr.setRequestHeader('Content-type',
-                    'application/x-www-form-urlencoded');
-                xhr.onload =
-                    function() {
-                        alert('Event has been updated successfully!');
-                        location.reload();
-                    };
-                xhr.send(`action=update&id=${id}&newVenue=${encodeURIComponent(newVenue)}&newCapacity=${encodeURIComponent(newCapacity)}&newPrice=${encodeURIComponent(newPrice)}&newRating=${encodeURIComponent(newRating)}&newAmenities=${encodeURIComponent(newAmenities)}&newType=${encodeURIComponent(newType)}&newImage=${encodeURIComponent(newImage)}`);
-            }
-        }
+        
     </script>
     <footer>
         <ul class="info">

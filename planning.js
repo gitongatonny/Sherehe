@@ -27,3 +27,19 @@ fetch("get_events.php")
         cardContainer.innerHTML = html;
     })
     .catch((error) => console.error(error));
+
+// Function to handle booking a venue
+function bookVenue(venueId) {
+    // Send an AJAX request to the server to retrieve the venue information
+    const xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            const venue = JSON.parse(this.responseText);
+            const { venueName, capacity, price } = venue;
+            // Redirect to the check-out page with the venue information as parameters
+            window.location.href = `check-out.php?id=${venueId}&name=${venueName}&capacity=${capacity}&price=${price}`;
+        }
+    };
+    xhttp.open("GET", `get-venue.php?id=${venueId}`, true);
+    xhttp.send();
+}

@@ -15,7 +15,7 @@
 
     <header>
         <nav>
-            <a href="../index.php"><img src="../Images/logo.png" alt="Sherehe logo"></a>
+            <a href="./admin_dash.php"><img src="../Images/logo.png" alt="Sherehe logo"></a>
             <ul>
                 <li><a href="insertion.php">Create Events</a></li>
                 <li><a href="view_events.php">Edit Events</a></li>

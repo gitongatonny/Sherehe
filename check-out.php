@@ -52,7 +52,21 @@
                 $phone = $_POST['phone'];
                 $email = $_POST['email'];
                 $date = $_POST['date'];
+                $events = $_POST['events'];
                 $period = $_POST['period'];
+
+                $event_type = "";
+                if ($events == 1) {
+                    $event_type = "Wedding";
+                } else if ($events == 2) {
+                    $event_type = "Birthday";
+                } else if ($events == 3) {
+                    $event_type = "Anniversary";
+                } else if ($events == 4) {
+                    $event_type = "Conference";
+                } else if ($events == 5) {
+                    $event_type = "Meeting";
+                }
 
                 // Update event availability in planning.php
                 $fp = fopen('planning.php', 'r');
@@ -89,6 +103,7 @@
                     email VARCHAR(50) NOT NULL,
                     date DATE NOT NULL,
                     period INT(2) NOT NULL,
+                    events VARCHAR(30) NOT NULL,
                     price FLOAT NOT NULL,
                     timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
                 )";
@@ -98,9 +113,10 @@
                     echo "Error creating table: " . $conn->error;
                 }
 
-                // Insert data into table
-                $sql = "INSERT INTO checkout (name, phone, email, date, period, price)
-        VALUES ('$name', '$phone', '$email', '$date', $period, $final_price)";
+                // Insert data into table 
+                $sql = "INSERT INTO checkout (name, phone, email, date, period, events, price) VALUES ('$name', '$phone', '$email', '$date', '$period', '$events', '$final_price')";
+              
+
 
                 if ($conn->query($sql) === FALSE) {
                     echo "Error inserting data: " . $conn->error;
@@ -165,6 +181,14 @@
                     <label for="email">Email:</label>
                     <input type="email" id="email" name="email" value="<?php echo $email ?>" required><br>
 
+                    <label for="events">Event Type:</label>
+                    <select id="events" name="events" required><br>
+                        <option value="Wedding">Wedding</option>
+                        <option value="Birthday">Birthday</option>
+                        <option value="Anniversary">Anniversary</option>
+                        <option value="Conference">Conference</option>
+                        <option value="Meeting">Meeting</option>
+                      
                     <label for="date">Date:</label>
                     <input type="date" id="date" name="date" required><br>
 
@@ -191,6 +215,7 @@
                         <th>Email</th>
                         <th>Date</th>
                         <th>Period</th>
+                        <th>Event Type</th>
                         <th>Final Price</th>
                     </tr>
                     <tr>
@@ -199,6 +224,7 @@
                         <td><?php echo $email; ?></td>
                         <td><?php echo $date; ?></td>
                         <td><?php echo $period; ?> day(s)</td>
+                        <td><?php echo $events; ?></td>
                         <td>KSHS <?php echo $final_price; ?></td>
                     </tr>
                 </table>
