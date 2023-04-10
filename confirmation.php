@@ -47,18 +47,16 @@
             $result = mysqli_query($conn, $sql);
 
             if (mysqli_num_rows($result) > 0) {
-                // Output data of each row
-                while ($row = mysqli_fetch_assoc($result)) {
-                    // Generate invitation card
-                    echo '<button id="download-button" onclick="generateInvitationCard(\'' . $_SESSION['username'] . '\', \'' . $row['events'] . '\', \'' . $row['date'] . '\')">Download Invitation Card</button>';
-                }
+                // Output data of the first row
+                $row = mysqli_fetch_assoc($result);
+
+                // Generate invitation card
+                echo '<button id="download-button" onclick="generateInvitationCard(\'' . $_SESSION['username'] . '\', \'' . $row['events'] . '\', \'' . $row['date'] . '\')">Download Invitation Card</button>';
             } else {
                 echo "0 results";
             }
 
             //Retrieve venue that was booked from venues table using the bookVenue(${event.id}) of the Book button
-            
-
 
             mysqli_close($conn);
         } else {
@@ -66,6 +64,7 @@
             echo '<p>You must be logged in to download the invitation card.</p>';
         }
         ?>
+
 
         <br>
         <button id="download-button"><a href="profile.php">Go To Your Profile</a></button>
