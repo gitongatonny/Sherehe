@@ -67,7 +67,8 @@
 
 
         <br>
-        <button id="download-button"><a href="profile.php">Go To Your Profile</a></button>
+        <br>
+        <button id="profile-button"><a href="profile.php">Go To Your Profile</a></button>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
         <script>
