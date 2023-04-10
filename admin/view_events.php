@@ -102,8 +102,9 @@
             echo '<td>' . $row['type'] . '</td>';
             echo '<td>' . $row['image'] . '</td>';
 
-            // Add edit button with popup form for editing values and AJAX request for updating record in database 
-            echo "<td><a href='edit_venue.php?id=" . $row['id'] . "'>Edit</a></td>";
+            // Add edit button for editing values and AJAX request for updating record in database 
+            echo "<td><a href='edit_venue.php?id=" . $row['id'] . "' class='edit-venue'>Edit</a></td>";
+
 
 
             // Add delete button with AJAX request for deleting record from database 
@@ -132,8 +133,6 @@
                 xhr.send('action=delete&id=' + id);
             }
         }
-
-        
     </script>
     <footer>
         <ul class="info">
