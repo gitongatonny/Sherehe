@@ -159,6 +159,10 @@ button {
   cursor: pointer;
 }
 
+button:hover{
+  background-color: orange;
+}
+
 /* Style the pop-up */
 .popup {
   position: absolute;
@@ -182,7 +186,7 @@ a.edit-venue {
 }
 
 a.edit-venue:hover {
-  background-color: #333;
+  background-color: orange;
 }
 
 
