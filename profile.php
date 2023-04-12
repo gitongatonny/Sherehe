@@ -35,12 +35,15 @@ while ($row = $result->fetch_assoc()) {
 
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Profile</title>
   <link rel="stylesheet" href="profile.css">
+  <link rel="icon" href="images/logo.png" type="image/x-icon">
 </head>
+
 <body>
-<header>
+  <header>
     <nav>
       <a href="index.php"><img src="images/logo.png" alt="Sherehe logo"></a>
       <ul>
@@ -54,42 +57,42 @@ while ($row = $result->fetch_assoc()) {
   </header>
 
   <main>
-  <h1>Welcome, <?php echo $name; ?></h1>
-  
-  <h2>Account Information</h2>
-  <p><strong>Name:</strong> <?php echo $name; ?></p>
-  <p><strong>Email:</strong> <?php echo $email; ?></p>
-  <p><strong>Phone:</strong> <?php echo $phone; ?></p>
-  <form action="change-pass.php">
-    <button type="submit">Change Password</button>
-  </form>
-  
-  <h2>Booking History</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Date</th>
-        <th>No. of Days</th>
-        <th>Price</th>
-        <th>Event Type</th>
-        <th>Date and Time of Order</th>
-      </tr>
-    </thead>
-    <tbody>
-      <?php foreach ($booking_history as $booking): ?>
+    <h1>Welcome, <?php echo $name; ?></h1>
+
+    <h2>Account Information</h2>
+    <p><strong>Name:</strong> <?php echo $name; ?></p>
+    <p><strong>Email:</strong> <?php echo $email; ?></p>
+    <p><strong>Phone:</strong> <?php echo $phone; ?></p>
+    <form action="change-pass.php">
+      <button type="submit">Change Password</button>
+    </form>
+
+    <h2>Booking History</h2>
+    <table>
+      <thead>
         <tr>
-          <td><?php echo $booking['date']; ?></td>
-          <td><?php echo $booking['period']; ?></td>
-          <td><?php echo $booking['price']; ?></td>
-          <td><?php echo $booking['events']; ?></td>
-          <td><?php echo $booking['Timestamp']; ?></td>
+          <th>Date</th>
+          <th>No. of Days</th>
+          <th>Price</th>
+          <th>Event Type</th>
+          <th>Date and Time of Order</th>
         </tr>
-      <?php endforeach; ?>
-    </tbody>
-  </table>
-  <form action="logout.php">
-    <button type="submit">Logout</button>
-  </form>
+      </thead>
+      <tbody>
+        <?php foreach ($booking_history as $booking) : ?>
+          <tr>
+            <td><?php echo $booking['date']; ?></td>
+            <td><?php echo $booking['period']; ?></td>
+            <td><?php echo $booking['price']; ?></td>
+            <td><?php echo $booking['events']; ?></td>
+            <td><?php echo $booking['Timestamp']; ?></td>
+          </tr>
+        <?php endforeach; ?>
+      </tbody>
+    </table>
+    <form action="logout.php">
+      <button type="submit">Logout</button>
+    </form>
   </main>
 
   <footer>
@@ -100,4 +103,5 @@ while ($row = $result->fetch_assoc()) {
 
 
 </body>
+
 </html>
