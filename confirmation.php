@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>Confirmation</title>
     <link rel="stylesheet" href="confirmation.css">
-    <link rel="icon" href="../images/logo.png" type="image/x-icon">
+    <link rel="icon" href="/images/logo.png" type="image/x-icon">
 </head>
 
 <body>
