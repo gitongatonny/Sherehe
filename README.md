@@ -1,4 +1,4 @@
-# Sherehe - Event Planning Website.
+# Sherehe - Venue Booking Website.
 
 This is a university group project that we undertook as a group of 3 for our internal attachment software module in our 3rd semester in 2nd year Computer Science at Dedan Kimathi University of Technology.
 
