@@ -1,266 +1,262 @@
 /* Add some basic styling */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f2f2f2;
-  }
-  
-  h1,
-  h2 {
-    color: #333;
-  }
-  
-  table {
-    border-collapse: collapse;
-    width: 100%;
-  }
-  
-  th,
-  td {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  th {
-    background-color: #f2f2f2;
-    color: #666;
-  }
-  
-  tr:hover {
-    background-color: #333;
-  }
-  
-  tr:hover td {
-    background-color: #333;
-    color: white;
-  }
-  
-  /* Add some animations and transitions */
-  button[type="submit"] {
-    background-color: #333;
-    border: none;
-    color: white;
-    padding: 12px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin-top: 20px;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-    align-items: center;
-  }
-  
-  button[type="submit"]:hover {
-    background-color: orange;
-  }
-  
-  /* Add hover effects */
-  a:hover {
-    color: #4CAF50;
-  }
-  
-  button[type="submit"]:hover {
-    background-color: orange;
-  }
-  
-  /* Header styles */
-  header {
-    background-color: #333;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 999;
-  }
-  
-  nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 10px;
-  }
-  
-  nav ul {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  nav li {
-    margin-right: 60px;
-  }
-  
-  nav a {
-    font-weight: bold;
-    transition: color 0.3s ease-in-out;
-    background-color: #333;
-    padding: 10px;
-    text-decoration: none;
-    color: #fff;
-  }
-  
-  nav a:hover {
-    color: black;
-    background-color: orange;
-  }
-  
-  .logo {
-    margin-right: 20px;
-  }
-  
-  nav img {
-    width: 70px;
-    height: 50px;
-  }
-  
-  /* Main content styles */
-  main {
-    max-width: 1200px;
-    margin: 100px auto 0; /* add margin-top */
-    padding: 50px 20px 0;
-  }
-  
-  /* Account Summary and Booking History styles */
-  .account-summary,
-  .booking-history {
-    width: 45%;
-    display: inline-block;
-    vertical-align: top;
-    margin-right: 5%;
-    border: 1px solid black;
-    padding: 10px;
-  }
-  
-  .account-summary:hover,
-  .booking-history:hover {
-    background-color: black;
-    color: white;
-  }
-  
-  .account-summary h2,
-  .booking-history h2 {
-    margin-top: 0;
-  }
-  
-  .account-summary p {
-    margin: 10px 0;
-  }
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f2f2f2;
+}
 
+h1,
+h2 {
+  color: #333;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+  color: #666;
+}
+
+tr:hover {
+  background-color: #333;
+}
+
+tr:hover td {
+  background-color: #333;
+  color: white;
+}
+
+/* Add some animations and transitions */
+button[type="submit"] {
+  background-color: #333;
+  border: none;
+  color: white;
+  padding: 12px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  align-items: center;
+}
+
+button[type="submit"]:hover {
+  background-color: orange;
+}
+
+/* Add hover effects */
+a:hover {
+  color: #4caf50;
+}
+
+button[type="submit"]:hover {
+  background-color: orange;
+}
+
+/* Header styles */
+header {
+  background-color: #333;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  margin-right: 60px;
+}
+
+nav a {
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+  background-color: #333;
+  padding: 10px;
+  text-decoration: none;
+  color: #fff;
+}
+
+nav a:hover {
+  color: black;
+  background-color: orange;
+}
+
+.logo {
+  margin-right: 20px;
+}
+
+nav img {
+  width: 70px;
+  height: 50px;
+}
+
+/* Main content styles */
+main {
+  max-width: 1200px;
+  margin: 100px auto 0; /* add margin-top */
+  padding: 50px 20px 0;
+}
+
+/* Account Summary and Booking History styles */
+.account-summary,
+.booking-history {
+  width: 45%;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 5%;
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.account-summary:hover,
+.booking-history:hover {
+  background-color: black;
+  color: white;
+}
+
+.account-summary h2,
+.booking-history h2 {
+  margin-top: 0;
+}
+
+.account-summary p {
+  margin: 10px 0;
+}
 
 /* Media queries for smaller screens */
 
 @media only screen and (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-        margin-top: 50px;
-    }
-    nav li {
-        margin-right: 0;
-        margin-bottom: 20px;
-    }
-    nav a {
-        padding: 5px;
-    }
-    .logo {
-        margin-right: 0;
-        margin-bottom: 20px;
-    }
-    nav img {
-        width: 50px;
-        height: 35px;
-    }
-    main {
-        height: 500px;
-    }
-    h1 {
-        font-size: 36px;
-    }
-    p {
-        font-size: 18px;
-    }
-    #btn {
-        padding: 10px 20px;
-        font-size: 14px;
-    }
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+  }
+  nav li {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+  nav a {
+    padding: 5px;
+  }
+  .logo {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+  nav img {
+    width: 50px;
+    height: 35px;
+  }
+  main {
+    height: 500px;
+  }
+  h1 {
+    font-size: 36px;
+  }
+  p {
+    font-size: 18px;
+  }
+  #btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
 }
-
 
 /* Media queries for medium screens */
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
-    nav ul {
-        margin-top: 50px;
-    }
-    .logo {
-        margin-right: 0;
-    }
+  nav ul {
+    margin-top: 50px;
+  }
+  .logo {
+    margin-right: 0;
+  }
 }
-
 
 /* Media queries for larger screens */
 
 @media only screen and (min-width: 1024px) {
-    nav {
-        padding: 20px;
-    }
-    nav li {
-        margin-right: 20px;
-    }
-    .logo {
-        margin-right: 20px;
-    }
-    nav img {
-        width: 70px;
-        height: 50px;
-    }
-    main {
-        height: 700px;
-    }
-    h1 {
-        font-size: 48px;
-    }
-    p {
-        font-size: 24px;
-    }
-    #btn {
-        padding: 15px 32px;
-        font-size: 16px;
-    }
+  nav {
+    padding: 20px;
+  }
+  nav li {
+    margin-right: 20px;
+  }
+  .logo {
+    margin-right: 20px;
+  }
+  nav img {
+    width: 70px;
+    height: 50px;
+  }
+  main {
+    height: 700px;
+  }
+  h1 {
+    font-size: 48px;
+  }
+  p {
+    font-size: 24px;
+  }
+  #btn {
+    padding: 15px 32px;
+    font-size: 16px;
+  }
 }
-
 
 /* Footer styles */
 
 footer {
-    background-color: #333;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    margin-top: 100px;
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  margin-top: 100px;
 }
 
 ul.info {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 ul.info li {
-    margin: 0 10px;
+  margin: 0 10px;
 }
 
 ul.info li a {
-    color: white;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
